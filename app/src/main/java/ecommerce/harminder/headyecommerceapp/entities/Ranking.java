@@ -1,15 +1,19 @@
 
 package ecommerce.harminder.headyecommerceapp.entities;
 
+import android.arch.persistence.room.ColumnInfo;
+
 import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Ranking {
 
-    @SerializedName("ranking")
+    @ColumnInfo(name="ranking")
     @Expose
     private String ranking;
+
+
     @SerializedName("products")
     @Expose
     private List<Product_> products = null;

@@ -1,23 +1,34 @@
 
 package ecommerce.harminder.headyecommerceapp.entities;
 
+import android.arch.persistence.room.ColumnInfo;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Product_ {
 
-    @SerializedName("id")
+    @ColumnInfo(name="id")
     @Expose
     private Integer id;
+
     @SerializedName("view_count")
+    @ColumnInfo(name="viewCount")
     @Expose
     private Integer viewCount;
+
     @SerializedName("order_count")
+    @ColumnInfo(name="orderCount")
     @Expose
     private Integer orderCount;
-    @SerializedName("shares")
+
+    @ColumnInfo(name="shares")
     @Expose
     private Integer shares;
+
+
+
+
 
     public Integer getId() {
         return id;
