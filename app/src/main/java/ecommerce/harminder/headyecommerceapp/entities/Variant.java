@@ -19,6 +19,12 @@ public class Variant {
     @Expose
     private Integer price;
 
+
+
+
+
+
+
     public Integer getId() {
         return id;
     }

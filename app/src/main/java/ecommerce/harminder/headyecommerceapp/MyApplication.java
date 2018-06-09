@@ -19,6 +19,7 @@ public class MyApplication extends Application {
                 .appModule(new AppModule(this))
                 .apiModule(new ApiModule("https://stark-spire-93433.herokuapp.com/json/"))
                 .build();
+
     }
 
     public ApiComponent getNetComponent() {

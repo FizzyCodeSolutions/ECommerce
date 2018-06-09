@@ -27,6 +27,12 @@ public class Product {
     @ColumnInfo(name="tax")
     private Tax tax;
 
+
+
+
+
+
+
     public Integer getId() {
         return id;
     }
