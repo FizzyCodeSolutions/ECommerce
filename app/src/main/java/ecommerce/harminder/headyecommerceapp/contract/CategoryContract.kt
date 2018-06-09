@@ -1,16 +1,17 @@
 package ecommerce.harminder.headyecommerceapp.contract
 
-class CategoryContract
-{
+import ecommerce.harminder.headyecommerceapp.room.entities.CategoriesPojo
+
+class CategoryContract {
 
     interface Presenter {
-       fun apiFetchCategories()
+        fun apiFetchCategories()
     }
 
 
-    interface View{
-        fun initiateFragment()
-        fun cancelWithError(error:String)
+    interface View {
+        fun initiateFragment(data: CategoriesPojo?)
+        fun cancelWithError(error: String)
     }
 
 }

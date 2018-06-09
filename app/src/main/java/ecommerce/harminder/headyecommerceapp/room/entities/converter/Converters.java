@@ -1,4 +1,4 @@
-package ecommerce.harminder.headyecommerceapp.entities.converter;
+package ecommerce.harminder.headyecommerceapp.room.entities.converter;
 
 import android.arch.persistence.room.TypeConverter;
 
@@ -7,17 +7,19 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import ecommerce.harminder.headyecommerceapp.entities.Category;
-import ecommerce.harminder.headyecommerceapp.entities.Ranking;
+
+import ecommerce.harminder.headyecommerceapp.room.entities.Category;
+import ecommerce.harminder.headyecommerceapp.room.entities.Ranking;
 
 public class Converters {
 
     @TypeConverter
     public static ArrayList<Category> fromString(String value) {
-        Type listType = new TypeToken<ArrayList<Category>>() {}.getType();
+        Type listType = new TypeToken<ArrayList<Category>>() {
+        }.getType();
         return new Gson().fromJson(value, listType);
     }
- 
+
     @TypeConverter
     public static String fromArrayList(ArrayList<Category> list) {
         Gson gson = new Gson();
@@ -28,7 +30,8 @@ public class Converters {
 
     @TypeConverter
     public static ArrayList<Ranking> fromStringRanking(String value) {
-        Type listType = new TypeToken<ArrayList<Category>>() {}.getType();
+        Type listType = new TypeToken<ArrayList<Category>>() {
+        }.getType();
         return new Gson().fromJson(value, listType);
     }
 

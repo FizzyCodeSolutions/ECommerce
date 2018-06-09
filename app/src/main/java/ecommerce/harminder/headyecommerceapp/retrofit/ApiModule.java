@@ -20,7 +20,7 @@ public class ApiModule {
 
     String mBaseUrl;
 
-   public ApiModule(String mBaseUrl) {
+    public ApiModule(String mBaseUrl) {
         this.mBaseUrl = mBaseUrl;
     }
 

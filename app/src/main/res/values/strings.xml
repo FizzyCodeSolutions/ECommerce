@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HeadyEcommerceApp</string>
+    <string name="NoDataFound">No Categories Found</string>
+    <string name="noProduct">No Products Found</string>
+    <string name="subCat">Sub-Category-</string>
+    <string name="allCat">All Categories</string>
 </resources>

@@ -1,5 +1,4 @@
-
-package ecommerce.harminder.headyecommerceapp.entities;
+package ecommerce.harminder.headyecommerceapp.room.entities;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

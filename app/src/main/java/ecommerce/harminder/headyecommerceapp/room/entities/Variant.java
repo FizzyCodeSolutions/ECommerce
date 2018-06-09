@@ -1,10 +1,11 @@
-
-package ecommerce.harminder.headyecommerceapp.entities;
+package ecommerce.harminder.headyecommerceapp.room.entities;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Variant {
+import java.io.Serializable;
+
+public class Variant implements Serializable {
 
     @SerializedName("id")
     @Expose
@@ -18,11 +19,6 @@ public class Variant {
     @SerializedName("price")
     @Expose
     private Integer price;
-
-
-
-
-
 
 
     public Integer getId() {

@@ -2,49 +2,53 @@ package ecommerce.harminder.headyecommerceapp.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
+import android.support.v4.app.FragmentActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ecommerce.harminder.headyecommerceapp.R
-import ecommerce.harminder.headyecommerceapp.adapters.CategoryAdater
-import ecommerce.harminder.headyecommerceapp.dbInstance
-import ecommerce.harminder.headyecommerceapp.entities.Category
+import ecommerce.harminder.headyecommerceapp.activities.MainActivity
+import ecommerce.harminder.headyecommerceapp.adapters.ProductsAdater
+import ecommerce.harminder.headyecommerceapp.room.entities.Category
+import ecommerce.harminder.headyecommerceapp.room.entities.Product
 import kotlinx.android.synthetic.main.frag_category.*
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.async
-import kotlinx.coroutines.experimental.launch
+import java.util.*
 
-class ProductsFragment(category: Category) : Fragment() {
-
-
+class ProductsFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-       return  inflater.inflate(R.layout.frag_category,container,false)
+        return inflater.inflate(R.layout.frag_category, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        getBundleData()
         setAdapter()
     }
 
-    private fun setAdapter() {
+    private lateinit var category: Category
 
-        launch {
-            var categoriesDeffered = async {
-                dbInstance(getContext()!!).categoryDao()?.categoryPojo
-            }
-
-            var categories = categoriesDeffered.await()
-
-            launch(UI) {
-                rvCategory.layoutManager = GridLayoutManager(getContext(), 2)
-                rvCategory.adapter = CategoryAdater(activity!!, categories?.categories!!)
-            }
+    private fun getBundleData() {
+        if (arguments != null && !arguments!!.isEmpty) {
+            category = arguments!!.getSerializable("data") as Category
         }
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+
+        (activity as MainActivity)?.supportActionBar?.title = category.name
+    }
+
+    private fun setAdapter() {
+        rvCategory.layoutManager = LinearLayoutManager(getContext())
+        rvCategory.adapter = ProductsAdater(activity as FragmentActivity, category.products!! as ArrayList<Product>)
+
+
     }
 
 }

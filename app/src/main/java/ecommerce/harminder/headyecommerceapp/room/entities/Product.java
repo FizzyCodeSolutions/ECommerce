@@ -1,36 +1,29 @@
-
-package ecommerce.harminder.headyecommerceapp.entities;
+package ecommerce.harminder.headyecommerceapp.room.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.List;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 
 @Entity
-public class Product {
+public class Product implements Serializable {
 
     @PrimaryKey()
     private Integer id;
 
-    @ColumnInfo(name="name")
+    @ColumnInfo(name = "name")
     private String name;
 
-    @ColumnInfo(name="date_added")
+    @ColumnInfo(name = "date_added")
     private String dateAdded;
 
-    @ColumnInfo(name="variants")
+    @ColumnInfo(name = "variants")
     private List<Variant> variants = null;
 
-    @ColumnInfo(name="tax")
+    @ColumnInfo(name = "tax")
     private Tax tax;
-
-
-
-
-
 
 
     public Integer getId() {

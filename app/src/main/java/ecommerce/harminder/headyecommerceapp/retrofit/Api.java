@@ -1,6 +1,6 @@
 package ecommerce.harminder.headyecommerceapp.retrofit;
 
-import ecommerce.harminder.headyecommerceapp.entities.CategoriesPojo;
+import ecommerce.harminder.headyecommerceapp.room.entities.CategoriesPojo;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

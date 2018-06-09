@@ -1,33 +1,33 @@
-
-package ecommerce.harminder.headyecommerceapp.entities;
+package ecommerce.harminder.headyecommerceapp.room.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import java.util.List;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = "Category")
-public class Category {
+import java.io.Serializable;
+import java.util.List;
 
-    @ColumnInfo(name="id")
+@Entity(tableName = "Category")
+public class Category implements Serializable {
+
+    @ColumnInfo(name = "id")
     @Expose
     private Integer id;
 
-    @ColumnInfo(name="name")
+    @ColumnInfo(name = "name")
     @Expose
     private String name;
 
-    @ColumnInfo(name="products")
+    @ColumnInfo(name = "products")
     @Expose
     private List<Product> products = null;
 
     @SerializedName("child_categories")
-    @ColumnInfo(name="child_categories")
+    @ColumnInfo(name = "child_categories")
     @Expose
     private List<Integer> childCategories = null;
-
-
 
 
     public Integer getId() {

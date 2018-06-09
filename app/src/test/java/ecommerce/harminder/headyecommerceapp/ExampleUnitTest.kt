@@ -1,8 +1,7 @@
 package ecommerce.harminder.headyecommerceapp
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * CategoriesPojo local unit test, which will execute on the development machine (host).
